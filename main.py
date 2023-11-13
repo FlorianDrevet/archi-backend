@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, Column, Integer, String, MetaData, Table
 from sqlalchemy.orm import declarative_base, Session
 from databases import Database
 
-DATABASE_URL = "postgresql://user:password@localhost/dbname"
+DATABASE_URL = "postgresql://postgres:postgres@10.123.1.100:5432/db"
 
 # Définir les modèles de données SQLAlchemy
 Base = declarative_base()
