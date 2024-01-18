@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from starlette.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
@@ -10,13 +10,14 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["10.0.2.4"],
+    expose_headers=["*"],
+    allow_origins=["10.0.2.4", "20.105.180.254", "10.0.2.6" ],
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-stored_names  = ["Florian", "Tom", "Léo"]
+stored_names = ["Florian", "Tom", "Léo"]
 
 
 @app.get("/")
